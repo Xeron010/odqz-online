@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>ODQZ — Brand & Digital Studio, Lahore</title>
-<meta name="description" content="ODQZ is an independent brand and digital studio based in Lahore, building considered identities, websites, and ongoing digital systems for ambitious teams across Pakistan." />
+<title>ODQZ — Brand & Digital Studio, Taunsa Sharif</title>
+<meta name="description" content="ODQZ is an independent brand and digital studio based in Taunsa Sharif, Punjab — building considered identities, websites, and ongoing digital systems for clients across Pakistan." />
 <meta name="theme-color" content="#EFE9DC" />
 
 <!-- Open Graph -->
 <meta property="og:title" content="ODQZ — Brand & Digital Studio" />
-<meta property="og:description" content="An independent studio in Lahore making considered work for considered brands." />
+<meta property="og:description" content="An independent studio in Taunsa Sharif making considered work for considered brands across Pakistan." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://odqz.online" />
 
@@ -789,6 +789,156 @@ button.submit .arrow { font-size: 0.7em; }
   .field.right { padding-left: 0; }
 }
 
+/* ============ PRICING ============ */
+.pricing-intro {
+  font-family: var(--serif);
+  font-weight: 320;
+  font-size: clamp(1.3rem, 2.2vw, 1.85rem);
+  line-height: 1.4;
+  letter-spacing: -0.012em;
+  font-variation-settings: "opsz" 144, "SOFT" 40;
+  color: var(--ink-2);
+  max-width: 60ch;
+  margin-bottom: 70px;
+}
+.pricing-blocks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+.pricing-block {
+  padding: 50px 40px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.pb-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 26px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.pb-head .label { margin: 0; }
+.pb-meta {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.price-list { list-style: none; }
+.price-list li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas: "name price" "desc desc";
+  gap: 4px 20px;
+  padding: 18px 0;
+  border-bottom: 1px dashed var(--line);
+}
+.price-list li:last-child { border-bottom: none; padding-bottom: 0; }
+.pl-name {
+  grid-area: name;
+  font-family: var(--serif);
+  font-weight: 350;
+  font-size: 1.15rem;
+  letter-spacing: -0.012em;
+  font-variation-settings: "opsz" 144, "SOFT" 30;
+}
+.pl-desc {
+  grid-area: desc;
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.5;
+  max-width: 50ch;
+}
+.pl-price {
+  grid-area: price;
+  font-family: var(--serif);
+  font-weight: 350;
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--accent);
+  white-space: nowrap;
+  font-variation-settings: "opsz" 144, "SOFT" 80;
+}
+.pricing-foot {
+  margin-top: 50px;
+  padding: 30px 0;
+  border-top: 1px solid var(--line);
+}
+.pricing-foot p {
+  font-size: 0.95rem;
+  color: var(--muted);
+  max-width: 80ch;
+  font-style: italic;
+  font-family: var(--serif);
+  font-weight: 350;
+  font-variation-settings: "opsz" 144, "SOFT" 60;
+  line-height: 1.55;
+}
+@media (max-width: 900px) {
+  .pricing-blocks { grid-template-columns: 1fr; border-left: none; }
+  .pricing-block { padding: 36px 0; border-right: none; }
+}
+
+/* ============ POLICY SECTIONS ============ */
+.policy-section {
+  border-top: 1px solid var(--line);
+  padding: 90px 0 80px;
+}
+.policy-section + .policy-section { padding-top: 80px; }
+.policy-body {
+  max-width: 70ch;
+}
+.policy-meta {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 36px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+}
+.policy-body h3 {
+  font-family: var(--serif);
+  font-weight: 350;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  letter-spacing: -0.018em;
+  font-variation-settings: "opsz" 144, "SOFT" 30;
+  margin: 32px 0 12px 0;
+  color: var(--ink);
+}
+.policy-body p {
+  color: var(--ink-2);
+  font-size: 1rem;
+  line-height: 1.65;
+  margin-bottom: 14px;
+}
+.policy-body .bullet-list {
+  list-style: none;
+  margin: 14px 0 18px 0;
+}
+.policy-body .bullet-list li {
+  color: var(--ink-2);
+  font-size: 1rem;
+  line-height: 1.65;
+  padding-left: 24px;
+  position: relative;
+  margin-bottom: 6px;
+}
+.policy-body .bullet-list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
 /* ============ FOOTER ============ */
 footer {
   background: var(--ink);
@@ -799,7 +949,7 @@ footer {
 }
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr 1fr;
   gap: 50px;
   margin-bottom: 80px;
 }
@@ -926,7 +1076,7 @@ footer {
       <div class="hero-meta">
         <div class="left">
           <span class="pill-light">Currently booking — Q3 / Q4 2026 <span class="pulse"></span></span>
-          <span class="mono">Lahore — 31.5°N, 74.3°E</span>
+          <span class="mono">Taunsa Sharif — 30.7°N, 70.6°E</span>
         </div>
         <span class="mono">Est. 2024 — Issue No. 14</span>
       </div>
@@ -937,7 +1087,7 @@ footer {
 
       <div class="hero-bottom">
         <p class="reveal">
-          ODQZ is an independent brand and digital studio based in Lahore. We partner with founders, operators, and in-house teams to build identities, websites, and the systems that hold them together — quietly, slowly, and with care.
+          ODQZ is an independent brand and digital studio based in Taunsa Sharif, Punjab. We partner with founders, operators, and in-house teams to build identities, websites, and the systems that hold them together — quietly, slowly, and with care.
         </p>
         <div class="meta-grid reveal">
           <div>
@@ -950,7 +1100,7 @@ footer {
           </div>
           <div>
             <div class="label">Studio</div>
-            <div class="val">Six people, Lahore</div>
+            <div class="val">Six people, Punjab</div>
           </div>
           <div>
             <div class="label">Working since</div>
@@ -1144,11 +1294,149 @@ footer {
     </div>
   </section>
 
+  <!-- ============ PRICING ============ -->
+  <section id="pricing">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="num">[ 03 ]  &mdash;  Pricing</span>
+        <h2>What things <em>cost</em>, in PKR.</h2>
+      </div>
+
+      <p class="pricing-intro reveal">
+        Most of our work is quoted as fixed-fee project bundles or monthly retainers. Below is the complete range we offer, with starting prices in Pakistani Rupees. Final pricing is confirmed in a written proposal after the discovery call.
+      </p>
+
+      <div class="pricing-blocks">
+        <div class="pricing-block reveal">
+          <div class="pb-head">
+            <span class="label">A — Brand &amp; Identity</span>
+            <span class="pb-meta">Project, fixed fee</span>
+          </div>
+          <ul class="price-list">
+            <li>
+              <span class="pl-name">Logo &amp; wordmark</span>
+              <span class="pl-desc">Single mark, two rounds of revision, master files in all formats.</span>
+              <span class="pl-price">PKR 35,000</span>
+            </li>
+            <li>
+              <span class="pl-name">Essential brand identity</span>
+              <span class="pl-desc">Logo system, primary palette, type pairing, basic guidelines.</span>
+              <span class="pl-price">PKR 150,000</span>
+            </li>
+            <li>
+              <span class="pl-name">Complete identity system</span>
+              <span class="pl-desc">Full visual system, voice, guidelines, applications across surfaces.</span>
+              <span class="pl-price">PKR 350,000</span>
+            </li>
+            <li>
+              <span class="pl-name">Brand strategy + identity</span>
+              <span class="pl-desc">Discovery, positioning, naming where required, full identity system.</span>
+              <span class="pl-price">PKR 600,000</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="pricing-block reveal">
+          <div class="pb-head">
+            <span class="label">B — Websites &amp; Digital</span>
+            <span class="pb-meta">Project, fixed fee</span>
+          </div>
+          <ul class="price-list">
+            <li>
+              <span class="pl-name">Single landing page</span>
+              <span class="pl-desc">One-page site, copywriting included, mobile responsive build.</span>
+              <span class="pl-price">PKR 85,000</span>
+            </li>
+            <li>
+              <span class="pl-name">Marketing website</span>
+              <span class="pl-desc">Five to seven pages, CMS, on-page SEO setup, analytics.</span>
+              <span class="pl-price">PKR 250,000</span>
+            </li>
+            <li>
+              <span class="pl-name">E-commerce store</span>
+              <span class="pl-desc">Shopify build, up to 50 products, payment integration, training.</span>
+              <span class="pl-price">PKR 450,000</span>
+            </li>
+            <li>
+              <span class="pl-name">Custom web application</span>
+              <span class="pl-desc">Bespoke product UI, frontend development, full handoff.</span>
+              <span class="pl-price">From PKR 850,000</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="pricing-block reveal">
+          <div class="pb-head">
+            <span class="label">C — Ongoing Retainers</span>
+            <span class="pb-meta">Monthly, six-month minimum</span>
+          </div>
+          <ul class="price-list">
+            <li>
+              <span class="pl-name">Content &amp; social</span>
+              <span class="pl-desc">Monthly content calendar, design, captions, scheduling.</span>
+              <span class="pl-price">PKR 75,000 / mo</span>
+            </li>
+            <li>
+              <span class="pl-name">SEO retainer</span>
+              <span class="pl-desc">Technical audit, on-page work, content briefs, monthly reporting.</span>
+              <span class="pl-price">PKR 95,000 / mo</span>
+            </li>
+            <li>
+              <span class="pl-name">Full-service marketing</span>
+              <span class="pl-desc">Content, performance creative, CRO, weekly reviews.</span>
+              <span class="pl-price">PKR 150,000 / mo</span>
+            </li>
+            <li>
+              <span class="pl-name">Premium retainer</span>
+              <span class="pl-desc">Dedicated team, full creative + development capacity.</span>
+              <span class="pl-price">PKR 250,000 / mo</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="pricing-block reveal">
+          <div class="pb-head">
+            <span class="label">D — One-off Services</span>
+            <span class="pb-meta">Single engagements</span>
+          </div>
+          <ul class="price-list">
+            <li>
+              <span class="pl-name">Strategy consultation</span>
+              <span class="pl-desc">Per-hour advisory, billed in two-hour blocks minimum.</span>
+              <span class="pl-price">PKR 8,000 / hr</span>
+            </li>
+            <li>
+              <span class="pl-name">Brand audit</span>
+              <span class="pl-desc">Written audit of existing identity with recommendations.</span>
+              <span class="pl-price">PKR 35,000</span>
+            </li>
+            <li>
+              <span class="pl-name">Logo refresh</span>
+              <span class="pl-desc">Modernisation of an existing wordmark or logo.</span>
+              <span class="pl-price">PKR 25,000</span>
+            </li>
+            <li>
+              <span class="pl-name">Website maintenance</span>
+              <span class="pl-desc">Ongoing updates, hosting management, security patches.</span>
+              <span class="pl-price">PKR 18,000 / mo</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pricing-foot reveal">
+        <p>
+          All prices are in Pakistani Rupees (PKR) and exclusive of applicable Sales Tax. International clients may be invoiced in USD, GBP, or AED at prevailing exchange rates. A 50% deposit is required to begin work; the balance is invoiced on milestone completion.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ APPROACH ============ -->
   <section id="approach">
     <div class="wrap">
       <div class="sec-head reveal">
-        <span class="num">[ 03 ]  &mdash;  Approach</span>
+        <span class="num">[ 04 ]  &mdash;  Approach</span>
         <h2>How we <em>work</em>.</h2>
       </div>
 
@@ -1184,7 +1472,7 @@ footer {
   <section id="studio" class="studio">
     <div class="wrap">
       <div class="sec-head reveal">
-        <span class="num">[ 04 ]  &mdash;  Studio</span>
+        <span class="num">[ 05 ]  &mdash;  Studio</span>
         <h2>A small <em>studio</em>, by design.</h2>
       </div>
 
@@ -1193,7 +1481,7 @@ footer {
           We started ODQZ in 2024 because the work we wanted to do — <em>slow, considered, in-house from strategy through code</em> — wasn't happening at the agencies we'd worked at before.
         </div>
         <div class="body reveal">
-          <p>Today we're a team of six designers, developers, and writers based out of a quiet studio in Gulberg, Lahore. We work with a deliberately small client list — typically four to six concurrent engagements — split between project work and ongoing retainers.</p>
+          <p>Today we're a team of six designers, developers, and writers based out of a quiet studio in Taunsa Sharif, working with clients across Lahore, Karachi, Islamabad, and abroad. We work with a deliberately small client list — typically four to six concurrent engagements — split between project work and ongoing retainers.</p>
           <p>Most of our clients come through referral. We turn down more work than we take. That isn't false modesty; it's how we keep the quality where we want it.</p>
           <p>If you're a founder, an in-house brand lead, or an operator at a company that takes its work seriously, we'd like to hear from you.</p>
         </div>
@@ -1225,7 +1513,7 @@ footer {
   <section id="faq">
     <div class="wrap">
       <div class="sec-head reveal">
-        <span class="num">[ 05 ]  &mdash;  Common Questions</span>
+        <span class="num">[ 06 ]  &mdash;  Common Questions</span>
         <h2>The things <em>most people</em> ask first.</h2>
       </div>
 
@@ -1237,7 +1525,7 @@ footer {
           </button>
           <div class="faq-a">
             <div class="faq-a-inner">
-              Brand identity engagements typically begin at PKR 350,000 and scale based on scope. Website projects begin at PKR 450,000. Ongoing retainers start at PKR 150,000 per month with a minimum six-month commitment. We send a detailed proposal after our first conversation — fixed fee, no hourly billing.
+              The full range of our services and starting prices in PKR is published in the <a href="#pricing" style="border-bottom: 1px solid var(--ink); padding-bottom: 1px;">Pricing</a> section above. In short, brand identity engagements begin at PKR 150,000, websites at PKR 85,000 for a single page, and ongoing retainers at PKR 75,000 per month with a six-month minimum. We send a fixed-fee proposal after our first conversation — no hourly billing on projects.
             </div>
           </div>
         </div>
@@ -1309,7 +1597,7 @@ footer {
   <section id="contact" class="contact">
     <div class="wrap">
       <div class="sec-head reveal">
-        <span class="num">[ 06 ]  &mdash;  Contact</span>
+        <span class="num">[ 07 ]  &mdash;  Contact</span>
         <h2 style="visibility:hidden; height:0; margin:0;">Contact</h2>
       </div>
 
@@ -1317,7 +1605,9 @@ footer {
         <h2 class="display reveal">Tell us about<br/>your <em>project</em>.</h2>
         <p class="meta reveal">
           We read every message. If we're the right studio for the work, we'll be in touch within two working days. If we're not, we'll usually point you to someone who is.<br/><br/>
-          Or write to us directly at <a href="mailto:hello@odqz.online">hello@odqz.online</a>.
+          Email: <a href="mailto:hello@odqz.online">hello@odqz.online</a><br/>
+          Phone: <a href="tel:+923331516444">0333 151 6444</a><br/>
+          Studio: Near Multan Kitab Ghar, Kalma Chowk,<br/>Taunsa Sharif, Punjab, Pakistan
         </p>
       </div>
 
@@ -1364,6 +1654,171 @@ footer {
       </form>
     </div>
   </section>
+  <!-- ============ PRIVACY POLICY ============ -->
+  <section id="privacy" class="policy-section">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="num">[ 08 ]  &mdash;  Privacy Policy</span>
+        <h2>How we handle <em>your information</em>.</h2>
+      </div>
+      <div class="policy-body reveal">
+        <p class="policy-meta">Last updated: 1 May 2026 — applies to all visitors and clients of odqz.online</p>
+
+        <h3>1. Information we collect</h3>
+        <p>When you contact us through the form on this site or by email, we collect the information you submit — typically your name, email address, company name, and a description of your project. We also collect basic anonymous analytics about how visitors use this website (pages visited, country, device type) using standard tools.</p>
+
+        <h3>2. How we use this information</h3>
+        <p>We use the contact information you submit only to respond to your inquiry and, if we begin a working relationship, to communicate about the engagement. We do not sell, rent, or share your information with third parties for marketing purposes.</p>
+
+        <h3>3. Payment information</h3>
+        <p>If you become a client, payments are processed through PayFast Pakistan, our authorised payment gateway, or via direct bank transfer. We do not store credit card or banking information on our systems. PayFast handles all card data in compliance with PCI-DSS standards as regulated by the State Bank of Pakistan.</p>
+
+        <h3>4. Data retention</h3>
+        <p>Inquiry messages are retained for up to 24 months. Client project records are retained for 7 years to comply with Pakistani tax and accounting regulations. After that period, data is permanently deleted.</p>
+
+        <h3>5. Cookies</h3>
+        <p>This website uses minimal cookies — only those necessary for basic functionality and anonymous analytics. We do not use advertising cookies or third-party trackers.</p>
+
+        <h3>6. Your rights</h3>
+        <p>You may request a copy of any information we hold about you, ask us to correct inaccuracies, or request deletion at any time by emailing privacy@odqz.online. We will respond within 14 working days.</p>
+
+        <h3>7. Contact</h3>
+        <p>For any questions about this Privacy Policy, write to us at privacy@odqz.online or by post at our studio address listed in the footer.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TERMS &amp; CONDITIONS ============ -->
+  <section id="terms" class="policy-section">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="num">[ 09 ]  &mdash;  Terms &amp; Conditions</span>
+        <h2>The terms of <em>working together</em>.</h2>
+      </div>
+      <div class="policy-body reveal">
+        <p class="policy-meta">Last updated: 1 May 2026 — applies to use of odqz.online and all engagements</p>
+
+        <h3>1. About these Terms</h3>
+        <p>These Terms govern your use of the ODQZ website (odqz.online) and any services you engage from ODQZ Studio ("we", "us", "our"). By using this site or commissioning work from us, you agree to be bound by these Terms.</p>
+
+        <h3>2. Services we provide</h3>
+        <p>ODQZ provides brand identity, web design and development, and ongoing digital retainer services to businesses and individuals in Pakistan and abroad. The exact scope of each engagement is defined in a written Statement of Work (SOW) signed by both parties before any work begins.</p>
+
+        <h3>3. Engagements &amp; quotes</h3>
+        <p>All quotes provided through this website or by email are valid for 30 days from issue. A signed SOW and 50% deposit are required before any work commences. The remaining balance is invoiced according to the milestones defined in the SOW.</p>
+
+        <h3>4. Payments</h3>
+        <p>Invoices are payable within 14 days of issue. Accepted methods include PayFast (cards, RAAST, JazzCash, Easypaisa, bank accounts) and direct bank transfer. Late payments accrue 1.5% interest per month after 30 days overdue. Persistent non-payment may result in suspension of work and retention of unreleased deliverables.</p>
+
+        <h3>5. Intellectual property</h3>
+        <p>Upon full payment of the engagement fee, all ownership rights to the final approved deliverables transfer to the client. ODQZ retains the right to display the work in our portfolio and case studies unless explicitly waived in writing. Working files, sketches, and rejected concepts remain the property of ODQZ.</p>
+
+        <h3>6. Revisions &amp; changes</h3>
+        <p>Each engagement includes a defined number of revision rounds as specified in the SOW. Additional rounds beyond that are billed at our hourly consulting rate of PKR 8,000 per hour. Significant changes to the project scope require a written addendum to the SOW.</p>
+
+        <h3>7. Confidentiality</h3>
+        <p>We treat all client information shared during an engagement as confidential. We will sign a Non-Disclosure Agreement at no extra cost when one is required by the client.</p>
+
+        <h3>8. Liability</h3>
+        <p>Our total liability under any engagement is limited to the total fees paid by the client for that engagement. We are not liable for indirect, incidental, or consequential damages including loss of profits, business, or data.</p>
+
+        <h3>9. Termination</h3>
+        <p>Either party may terminate an engagement with 14 days written notice. The client remains liable for fees corresponding to work completed up to the termination date plus any unrecoverable third-party costs already committed (such as stock photography licences or hosting fees).</p>
+
+        <h3>10. Governing law</h3>
+        <p>These Terms are governed by the laws of the Islamic Republic of Pakistan. Any disputes will be resolved in the courts of Punjab, Pakistan.</p>
+
+        <h3>11. Updates to these Terms</h3>
+        <p>We may update these Terms from time to time. The "Last updated" date at the top will reflect the most recent revision. Continued use of our services after updates constitutes acceptance of the revised Terms.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ REFUND &amp; CANCELLATION ============ -->
+  <section id="refund" class="policy-section">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="num">[ 10 ]  &mdash;  Refund &amp; Cancellation</span>
+        <h2>Refunds, cancellations &amp; <em>what to expect</em>.</h2>
+      </div>
+      <div class="policy-body reveal">
+        <p class="policy-meta">Last updated: 1 May 2026 — applies to all paid engagements with ODQZ Studio</p>
+
+        <p>Because we provide custom professional services rather than physical products, our refund policy reflects how design and development work is typically billed and delivered.</p>
+
+        <h3>1. Project deposits</h3>
+        <p>The 50% deposit required to begin a project is partially refundable if the client cancels before any creative or development work has commenced. In that case, an administrative charge of PKR 15,000 will be retained to cover the discovery call, scoping, and account setup, and the remainder will be returned within 7 working days.</p>
+
+        <h3>2. After work has commenced</h3>
+        <p>Once design or development work has begun on the engagement, the deposit becomes non-refundable. If the project is cancelled mid-way, the client is invoiced for any work completed beyond the deposit value, calculated at our standard hourly rate of PKR 8,000 per hour. All deliverables produced up to that point are handed over upon settlement.</p>
+
+        <h3>3. Retainer cancellation</h3>
+        <p>Monthly retainers require a six-month minimum commitment. After that period, retainers may be cancelled with 30 days written notice. No refunds are issued for the current month if cancellation is requested mid-month; the retainer continues for the remainder of that billing cycle, after which it ends.</p>
+
+        <h3>4. Dissatisfaction with deliverables</h3>
+        <p>Each engagement includes a defined number of revision rounds. If after using the included revisions the client is still dissatisfied, we will work with them in good faith to either revise the deliverable further at our expense, agree on a partial refund, or terminate the engagement amicably. We have always preferred a frank conversation to a contractual dispute.</p>
+
+        <h3>5. Online payments &amp; chargebacks</h3>
+        <p>Refunds for payments made via PayFast (cards, RAAST, JazzCash, Easypaisa) are processed back to the original payment method within 7 to 14 working days, subject to PayFast's processing timelines. The client agrees not to initiate a chargeback for any work that has been delivered and accepted in line with the SOW.</p>
+
+        <h3>6. How to request a refund or cancellation</h3>
+        <p>Any refund or cancellation request should be raised in writing to billing@odqz.online with the engagement reference number and the reason for the request. We commit to acknowledging within 48 working hours and resolving within 10 working days where possible.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICE DELIVERY ============ -->
+  <section id="service-policy" class="policy-section">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="num">[ 11 ]  &mdash;  Service Delivery</span>
+        <h2>How services <em>are delivered</em>.</h2>
+      </div>
+      <div class="policy-body reveal">
+        <p class="policy-meta">Last updated: 1 May 2026 — service delivery and shipping policy</p>
+
+        <p>ODQZ delivers digital design and development services. We do not ship physical goods, so the standard concept of postal "shipping" does not apply. The following describes how our service deliverables are made available to clients.</p>
+
+        <h3>1. Engagement timelines</h3>
+        <p>Every engagement begins with a written Statement of Work that includes a project timeline with key milestones. Typical timelines are:</p>
+        <ul class="bullet-list">
+          <li>Brand identity engagement &mdash; 6 to 8 weeks</li>
+          <li>Marketing website &mdash; 8 to 12 weeks</li>
+          <li>E-commerce or product UI &mdash; 12 to 16 weeks</li>
+          <li>Retainer engagements &mdash; ongoing, monthly cycles</li>
+          <li>One-off services (audits, refreshes) &mdash; 2 to 4 weeks</li>
+        </ul>
+
+        <h3>2. Delivery channels</h3>
+        <p>All work products are delivered digitally. Specifically:</p>
+        <ul class="bullet-list">
+          <li>Design files via Figma share links or direct download from a private cloud folder</li>
+          <li>Brand guidelines as a downloadable PDF document</li>
+          <li>Source files and assets via a zipped archive on Google Drive or Dropbox</li>
+          <li>Websites deployed directly to the client's hosting environment with admin handoff</li>
+          <li>Retainer outputs delivered through a shared monthly folder and weekly status emails</li>
+        </ul>
+
+        <h3>3. Communication during the engagement</h3>
+        <p>Throughout the engagement, the assigned project lead is available via email and scheduled video calls. We do not communicate via WhatsApp during working hours unless specifically requested by the client. Standard response time is one working day.</p>
+
+        <h3>4. Working hours &amp; holidays</h3>
+        <p>Our working hours are Monday to Friday, 09:30 to 18:30 Pakistan Standard Time (PKT). We observe Pakistani public holidays, which may extend timelines by one or two days during major events such as Eid-ul-Fitr, Eid-ul-Adha, and Independence Day. Clients are notified in writing in advance of any holiday-related delays.</p>
+
+        <h3>5. Hosting &amp; ongoing access</h3>
+        <p>For website projects, the client owns and pays for their own hosting and domain. We assist with setup but do not host client websites on our infrastructure unless a hosting retainer is in place.</p>
+
+        <h3>6. Acceptance &amp; handoff</h3>
+        <p>Each milestone deliverable is reviewed by the client. The client has 7 working days to provide feedback or accept the deliverable. If no response is received within 7 working days, the deliverable is considered accepted by default and the engagement moves to the next milestone.</p>
+
+        <h3>7. Post-delivery support</h3>
+        <p>All projects include 30 days of post-delivery support for bug fixes and minor tweaks at no additional charge. Beyond that period, additional work is billed at our hourly rate or covered under a maintenance retainer.</p>
+
+        <h3>8. Physical shipping</h3>
+        <p>If an engagement involves physical deliverables — for example printed brand guidelines, signage, or packaging samples — these are shipped via TCS or Leopards Courier within Pakistan, with tracking provided. Shipping outside Pakistan is arranged via DHL or FedEx and is quoted separately. Standard delivery within Pakistan is 3 to 5 working days from despatch.</p>
+      </div>
+    </div>
+  </section>
 </main>
 
 <!-- ============ FOOTER ============ -->
@@ -1372,12 +1827,12 @@ footer {
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="wordmark">odqz<span class="it">.</span></div>
-        <p>An independent brand &amp; digital studio. Working out of Lahore since 2024 with selected clients across Pakistan and the region.</p>
+        <p>An independent brand &amp; digital studio. Working out of Taunsa Sharif since 2024 with selected clients across Pakistan and the region.</p>
       </div>
 
       <div class="f-col">
         <h5>Studio</h5>
-        <p>Studio 14, Block H<br/>Gulberg III, Lahore<br/>Punjab, Pakistan</p>
+        <p>Near Multan Kitab Ghar<br/>Kalma Chowk, Taunsa Sharif<br/>Punjab, Pakistan</p>
       </div>
 
       <div class="f-col">
@@ -1385,6 +1840,7 @@ footer {
         <ul>
           <li><a href="mailto:hello@odqz.online">hello@odqz.online</a></li>
           <li><a href="mailto:new@odqz.online">new@odqz.online</a></li>
+          <li><a href="tel:+923331516444">0333 151 6444</a></li>
           <li><a href="#contact">Contact form</a></li>
         </ul>
       </div>
@@ -1394,9 +1850,20 @@ footer {
         <ul>
           <li><a href="#work">Selected work</a></li>
           <li><a href="#services">Services</a></li>
+          <li><a href="#pricing">Pricing</a></li>
           <li><a href="#approach">Approach</a></li>
           <li><a href="#studio">Studio</a></li>
           <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="f-col">
+        <h5>Information</h5>
+        <ul>
+          <li><a href="#privacy">Privacy Policy</a></li>
+          <li><a href="#terms">Terms &amp; Conditions</a></li>
+          <li><a href="#refund">Refund &amp; Cancellation</a></li>
+          <li><a href="#service-policy">Service Delivery</a></li>
         </ul>
       </div>
     </div>
@@ -1404,7 +1871,7 @@ footer {
     <div class="footer-bottom">
       <span>© 2024 — 2026 ODQZ Studio. All work shown remains property of respective clients.</span>
       <span class="live">
-        <span id="liveTime">—</span> · Lahore
+        <span id="liveTime">—</span> · Taunsa Sharif
       </span>
     </div>
   </div>
