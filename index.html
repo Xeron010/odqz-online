@@ -1,0 +1,1495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ODQZ — Brand & Digital Studio, Lahore</title>
+<meta name="description" content="ODQZ is an independent brand and digital studio based in Lahore, building considered identities, websites, and ongoing digital systems for ambitious teams across Pakistan." />
+<meta name="theme-color" content="#EFE9DC" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="ODQZ — Brand & Digital Studio" />
+<meta property="og:description" content="An independent studio in Lahore making considered work for considered brands." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://odqz.online" />
+
+<!-- Favicon (inline SVG) -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%2315130F'/><text x='50%25' y='54%25' font-family='Georgia,serif' font-size='52' font-weight='400' fill='%23EFE9DC' text-anchor='middle' dominant-baseline='middle' font-style='italic'>o</text></svg>" />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,0..100;1,9..144,300..700,0..100&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+
+<style>
+/* ============ TOKENS ============ */
+:root {
+  --bg: #EFE9DC;
+  --bg-2: #E7E0D0;
+  --ink: #15130F;
+  --ink-2: #2A2722;
+  --muted: #6B645A;
+  --line: #D4CCBB;
+  --accent: #B5471F;
+  --accent-2: #8E3712;
+  --serif: 'Fraunces', Georgia, serif;
+  --sans: 'Instrument Sans', system-ui, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, monospace;
+  --container: 1400px;
+  --gutter: clamp(20px, 4vw, 64px);
+  --radius: 2px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.55;
+  font-weight: 400;
+  overflow-x: hidden;
+}
+
+/* Subtle grain overlay */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0.06;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; }
+
+/* ============ TYPOGRAPHY ============ */
+.serif { font-family: var(--serif); font-weight: 350; letter-spacing: -0.02em; }
+.serif-italic { font-family: var(--serif); font-style: italic; font-weight: 350; }
+.mono { font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.04em; text-transform: uppercase; font-weight: 400; }
+.label { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); font-weight: 400; }
+
+/* ============ LAYOUT ============ */
+.wrap {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+section {
+  padding: clamp(80px, 12vh, 160px) 0;
+  position: relative;
+}
+
+/* ============ NAV ============ */
+nav.top {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 22px var(--gutter);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: backdrop-filter 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+  border-bottom: 1px solid transparent;
+}
+nav.top.scrolled {
+  background: rgba(239, 233, 220, 0.85);
+  backdrop-filter: blur(12px) saturate(120%);
+  -webkit-backdrop-filter: blur(12px) saturate(120%);
+  border-bottom-color: var(--line);
+}
+.brand {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.brand .dot {
+  width: 7px; height: 7px;
+  background: var(--accent);
+  border-radius: 50%;
+  display: inline-block;
+  transform: translateY(-2px);
+}
+.nav-links {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+.nav-links a {
+  font-size: 0.92rem;
+  position: relative;
+  padding: 4px 0;
+  transition: opacity 0.2s ease;
+}
+.nav-links a:hover { opacity: 0.55; }
+.nav-links .pill {
+  border: 1px solid var(--ink);
+  padding: 8px 18px;
+  border-radius: 100px;
+  font-size: 0.88rem;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+.nav-links .pill:hover { background: var(--ink); color: var(--bg); opacity: 1; }
+.nav-toggle { display: none; }
+
+@media (max-width: 800px) {
+  .nav-links a:not(.pill) { display: none; }
+}
+
+/* ============ HERO ============ */
+.hero {
+  padding: 180px 0 100px;
+  position: relative;
+}
+.hero-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 60px;
+  align-items: end;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.hero-meta .left { display: flex; gap: 28px; align-items: center; flex-wrap: wrap; }
+.hero-meta .pill-light {
+  border: 1px solid var(--line);
+  border-radius: 100px;
+  padding: 6px 14px 6px 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.pulse {
+  width: 8px; height: 8px;
+  background: #4A8B3F;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  margin-left: 6px;
+}
+.pulse::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: #4A8B3F;
+  opacity: 0.4;
+  animation: pulse 2.2s ease-out infinite;
+}
+@keyframes pulse {
+  0% { transform: scale(0.6); opacity: 0.5; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+
+.headline {
+  font-family: var(--serif);
+  font-weight: 320;
+  font-size: clamp(2.6rem, 7.4vw, 7.6rem);
+  line-height: 0.96;
+  letter-spacing: -0.035em;
+  font-variation-settings: "opsz" 144, "SOFT" 30;
+  max-width: 14ch;
+  margin-bottom: 42px;
+}
+.headline em {
+  font-style: italic;
+  font-weight: 320;
+  color: var(--accent);
+  font-variation-settings: "opsz" 144, "SOFT" 80;
+}
+
+.hero-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 1px solid var(--line);
+}
+.hero-bottom p {
+  font-size: 1.08rem;
+  color: var(--ink-2);
+  max-width: 44ch;
+  line-height: 1.55;
+}
+.hero-bottom .meta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px 40px;
+  align-self: end;
+}
+.hero-bottom .meta-grid .label { margin-bottom: 6px; }
+.hero-bottom .meta-grid .val {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-weight: 350;
+}
+
+@media (max-width: 800px) {
+  .hero-bottom { grid-template-columns: 1fr; gap: 40px; }
+  .hero-bottom .meta-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* ============ MARQUEE ============ */
+.marquee {
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  background: var(--ink);
+  color: var(--bg);
+  overflow: hidden;
+  padding: 18px 0;
+  white-space: nowrap;
+}
+.marquee-track {
+  display: inline-flex;
+  gap: 60px;
+  animation: marquee 38s linear infinite;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+  font-weight: 320;
+  font-variation-settings: "opsz" 144, "SOFT" 60;
+}
+.marquee-track > span { display: inline-flex; align-items: center; gap: 60px; padding-right: 60px; }
+.marquee-track .star {
+  font-family: var(--sans);
+  color: var(--accent);
+  font-size: 1.1em;
+  font-style: normal;
+  font-weight: 300;
+}
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ============ SECTION HEADER ============ */
+.sec-head {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 40px;
+  margin-bottom: 70px;
+  align-items: end;
+}
+.sec-head .num {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+}
+.sec-head h2 {
+  font-family: var(--serif);
+  font-weight: 320;
+  font-size: clamp(2rem, 5vw, 4.2rem);
+  line-height: 1;
+  letter-spacing: -0.025em;
+  font-variation-settings: "opsz" 144, "SOFT" 30;
+  max-width: 18ch;
+}
+.sec-head h2 em {
+  font-style: italic;
+  color: var(--accent);
+  font-variation-settings: "opsz" 144, "SOFT" 80;
+}
+@media (max-width: 800px) {
+  .sec-head { grid-template-columns: 1fr; gap: 16px; }
+}
+
+/* ============ WORK ============ */
+.work-list {
+  border-top: 1px solid var(--line);
+}
+.work-item {
+  display: grid;
+  grid-template-columns: 80px 2.5fr 1.4fr 1fr 80px;
+  gap: 30px;
+  padding: 36px 0;
+  border-bottom: 1px solid var(--line);
+  align-items: center;
+  transition: padding 0.4s ease;
+  position: relative;
+  cursor: pointer;
+}
+.work-item:hover { padding-left: 20px; padding-right: 20px; }
+.work-item .idx {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+}
+.work-item .title {
+  font-family: var(--serif);
+  font-weight: 350;
+  font-size: clamp(1.5rem, 3vw, 2.4rem);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  font-variation-settings: "opsz" 144, "SOFT" 20;
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.work-item .title .it {
+  font-style: italic;
+  color: var(--muted);
+  font-size: 0.7em;
+  font-weight: 350;
+}
+.work-item .scope { font-size: 0.95rem; color: var(--ink-2); }
+.work-item .meta {
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.work-item .arrow {
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  color: var(--ink);
+  transition: transform 0.4s ease, color 0.3s ease;
+  text-align: right;
+  font-style: italic;
+}
+.work-item:hover .arrow { transform: translateX(8px); color: var(--accent); }
+.work-item:hover .title { color: var(--accent); }
+
+/* Project swatch for hover (decorative SVG) */
+.work-item .swatch {
+  position: absolute;
+  right: -4%;
+  top: 50%;
+  transform: translateY(-50%) scale(0.92);
+  width: 220px; height: 140px;
+  border-radius: 4px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease, transform 0.5s ease;
+  z-index: 5;
+  box-shadow: 0 30px 60px -20px rgba(20,18,15,0.35);
+  overflow: hidden;
+}
+.work-item:hover .swatch { opacity: 1; transform: translateY(-50%) scale(1); }
+
+@media (max-width: 1100px) {
+  .work-item { grid-template-columns: 50px 2fr 1.2fr 1fr; }
+  .work-item .arrow { display: none; }
+  .work-item .swatch { display: none; }
+}
+@media (max-width: 700px) {
+  .work-item { grid-template-columns: 1fr; gap: 8px; padding: 26px 0; }
+  .work-item .idx { font-size: 0.7rem; }
+  .work-item .scope, .work-item .meta { font-size: 0.85rem; }
+}
+
+/* ============ SERVICES ============ */
+.services {
+  background: var(--bg-2);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--line);
+}
+.svc {
+  padding: 50px 36px 50px 0;
+  border-right: 1px solid var(--line);
+  position: relative;
+}
+.svc:last-child { border-right: none; padding-right: 0; }
+.svc:not(:first-child) { padding-left: 36px; }
+.svc .label { margin-bottom: 22px; }
+.svc h3 {
+  font-family: var(--serif);
+  font-weight: 350;
+  font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  margin-bottom: 18px;
+  font-variation-settings: "opsz" 144, "SOFT" 50;
+}
+.svc h3 em { font-style: italic; color: var(--accent); }
+.svc p { color: var(--ink-2); margin-bottom: 28px; font-size: 0.98rem; }
+.svc ul { list-style: none; }
+.svc li {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 11px 0;
+  border-top: 1px solid var(--line);
+  color: var(--ink-2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.svc li:last-child { border-bottom: 1px solid var(--line); }
+.svc li::before { content: ''; }
+.svc li .plus { color: var(--accent); font-size: 0.9em; }
+@media (max-width: 900px) {
+  .services-grid { grid-template-columns: 1fr; }
+  .svc { border-right: none; border-bottom: 1px solid var(--line); padding: 40px 0 !important; }
+  .svc:last-child { border-bottom: none; }
+}
+
+/* ============ APPROACH ============ */
+.approach-list { border-top: 1px solid var(--line); }
+.approach-row {
+  display: grid;
+  grid-template-columns: 200px 200px 1fr;
+  gap: 40px;
+  padding: 54px 0;
+  border-bottom: 1px solid var(--line);
+  align-items: start;
+}
+.approach-row .num {
+  font-family: var(--serif);
+  font-size: clamp(2.6rem, 4.8vw, 4rem);
+  font-weight: 320;
+  letter-spacing: -0.03em;
+  font-variation-settings: "opsz" 144, "SOFT" 20;
+  line-height: 0.9;
+  color: var(--accent);
+}
+.approach-row h4 {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 350;
+  font-size: clamp(1.4rem, 2.4vw, 2rem);
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  font-variation-settings: "opsz" 144, "SOFT" 80;
+}
+.approach-row p {
+  color: var(--ink-2);
+  font-size: 1.05rem;
+  max-width: 56ch;
+  line-height: 1.55;
+}
+@media (max-width: 800px) {
+  .approach-row { grid-template-columns: 1fr; gap: 14px; padding: 36px 0; }
+  .approach-row .num { font-size: 2.6rem; }
+}
+
+/* ============ STUDIO ============ */
+.studio {
+  background: var(--ink);
+  color: var(--bg);
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+}
+.studio .label { color: rgba(239, 233, 220, 0.55); }
+.studio h2 { color: var(--bg); }
+.studio h2 em { color: #E89B6E; }
+.studio-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  margin-bottom: 100px;
+}
+.studio-body .lead {
+  font-family: var(--serif);
+  font-weight: 320;
+  font-size: clamp(1.4rem, 2.4vw, 2rem);
+  line-height: 1.25;
+  letter-spacing: -0.018em;
+  font-variation-settings: "opsz" 144, "SOFT" 40;
+  color: var(--bg);
+}
+.studio-body .lead em { font-style: italic; color: #E89B6E; font-variation-settings: "opsz" 144, "SOFT" 100; }
+.studio-body .body p {
+  color: rgba(239, 233, 220, 0.78);
+  margin-bottom: 18px;
+  font-size: 1.02rem;
+}
+.studio-body .body p:last-child { margin-bottom: 0; }
+
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px;
+  border-top: 1px solid rgba(239, 233, 220, 0.15);
+  padding-top: 70px;
+}
+.t-card {
+  position: relative;
+}
+.t-card .qmark {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 4rem;
+  line-height: 0.6;
+  color: #E89B6E;
+  margin-bottom: 16px;
+  display: block;
+}
+.t-card blockquote {
+  font-family: var(--serif);
+  font-weight: 320;
+  font-size: clamp(1.15rem, 1.6vw, 1.4rem);
+  line-height: 1.4;
+  letter-spacing: -0.012em;
+  margin-bottom: 26px;
+  font-variation-settings: "opsz" 144, "SOFT" 50;
+  color: var(--bg);
+}
+.t-card cite {
+  font-style: normal;
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(239, 233, 220, 0.6);
+  line-height: 1.7;
+}
+.t-card cite strong {
+  font-weight: 500;
+  color: var(--bg);
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 900px) {
+  .studio-body { grid-template-columns: 1fr; gap: 50px; }
+  .testimonials { grid-template-columns: 1fr; gap: 40px; }
+}
+
+/* ============ FAQ ============ */
+.faq-list {
+  border-top: 1px solid var(--line);
+}
+.faq-item {
+  border-bottom: 1px solid var(--line);
+}
+.faq-q {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 0;
+  text-align: left;
+  gap: 30px;
+}
+.faq-q .q-text {
+  font-family: var(--serif);
+  font-weight: 350;
+  font-size: clamp(1.1rem, 1.7vw, 1.45rem);
+  letter-spacing: -0.018em;
+  line-height: 1.3;
+  font-variation-settings: "opsz" 144, "SOFT" 30;
+}
+.faq-q .toggle {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.6rem;
+  color: var(--accent);
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+  width: 24px; text-align: center;
+}
+.faq-item.open .toggle { transform: rotate(45deg); }
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.faq-a-inner {
+  padding: 0 0 32px 0;
+  max-width: 70ch;
+  color: var(--ink-2);
+  font-size: 1.02rem;
+  line-height: 1.6;
+}
+.faq-item.open .faq-a { max-height: 400px; }
+
+/* ============ CONTACT ============ */
+.contact {
+  border-top: 1px solid var(--line);
+  background: var(--bg);
+  padding-bottom: 60px;
+}
+.contact-head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 80px;
+  align-items: end;
+}
+.contact-head .display {
+  font-family: var(--serif);
+  font-weight: 320;
+  font-size: clamp(2.8rem, 7vw, 7rem);
+  line-height: 0.96;
+  letter-spacing: -0.035em;
+  font-variation-settings: "opsz" 144, "SOFT" 30;
+}
+.contact-head .display em {
+  font-style: italic;
+  color: var(--accent);
+  font-variation-settings: "opsz" 144, "SOFT" 80;
+}
+.contact-head .meta {
+  font-size: 1.05rem;
+  color: var(--ink-2);
+  max-width: 38ch;
+  line-height: 1.55;
+}
+.contact-head .meta a { border-bottom: 1px solid var(--ink); padding-bottom: 1px; }
+
+@media (max-width: 800px) {
+  .contact-head { grid-template-columns: 1fr; gap: 30px; }
+}
+
+/* Form */
+form.cf {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-top: 1px solid var(--line);
+}
+.field {
+  padding: 26px 0 22px 0;
+  border-bottom: 1px solid var(--line);
+  position: relative;
+}
+.field.full { grid-column: 1 / -1; }
+.field.left { padding-right: 40px; border-right: 1px solid var(--line); padding-left: 0; }
+.field.right { padding-left: 40px; }
+.field label {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+.field input,
+.field textarea,
+.field select {
+  width: 100%;
+  border: none;
+  background: transparent;
+  font-family: var(--serif);
+  font-weight: 350;
+  font-size: clamp(1.1rem, 1.6vw, 1.4rem);
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  outline: none;
+  font-variation-settings: "opsz" 144, "SOFT" 20;
+  resize: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.field textarea { min-height: 100px; line-height: 1.4; }
+.field input::placeholder,
+.field textarea::placeholder {
+  color: var(--muted);
+  opacity: 0.6;
+  font-style: italic;
+}
+.field select {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8' fill='%2315130F'%3E%3Cpath d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0 center;
+  background-size: 14px;
+  padding-right: 28px;
+}
+
+.submit-row {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 40px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+button.submit {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(2rem, 4.4vw, 3.6rem);
+  font-weight: 320;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  background: none;
+  border: none;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 18px;
+  font-variation-settings: "opsz" 144, "SOFT" 80;
+  transition: color 0.25s ease, gap 0.4s ease;
+  position: relative;
+  padding-right: 4px;
+}
+button.submit::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 30px;
+  bottom: 4px;
+  height: 1px;
+  background: var(--ink);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+}
+button.submit:hover::after { transform: scaleX(1); transform-origin: left; }
+button.submit:hover { color: var(--accent); gap: 28px; }
+button.submit:hover::after { background: var(--accent); }
+button.submit .arrow { font-size: 0.7em; }
+
+.submit-note {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  max-width: 30ch;
+  text-align: right;
+  line-height: 1.5;
+}
+
+.form-success {
+  grid-column: 1 / -1;
+  padding: 60px 0 30px;
+  display: none;
+}
+.form-success.show { display: block; }
+.form-success h3 {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 320;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  letter-spacing: -0.025em;
+  margin-bottom: 18px;
+  color: var(--accent);
+  font-variation-settings: "opsz" 144, "SOFT" 80;
+}
+.form-success p { color: var(--ink-2); max-width: 50ch; font-size: 1.05rem; }
+
+@media (max-width: 800px) {
+  form.cf { grid-template-columns: 1fr; }
+  .field.left { padding-right: 0; border-right: none; }
+  .field.right { padding-left: 0; }
+}
+
+/* ============ FOOTER ============ */
+footer {
+  background: var(--ink);
+  color: var(--bg);
+  padding: 80px 0 36px;
+  position: relative;
+  overflow: hidden;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  gap: 50px;
+  margin-bottom: 80px;
+}
+.footer-brand .wordmark {
+  font-family: var(--serif);
+  font-weight: 320;
+  font-size: clamp(3rem, 8vw, 7rem);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  margin-bottom: 22px;
+  font-variation-settings: "opsz" 144, "SOFT" 30;
+}
+.footer-brand .wordmark .it { font-style: italic; color: #E89B6E; font-variation-settings: "opsz" 144, "SOFT" 100; }
+.footer-brand p { color: rgba(239, 233, 220, 0.62); max-width: 32ch; font-size: 0.95rem; line-height: 1.5; }
+.f-col h5 {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(239, 233, 220, 0.55);
+  margin-bottom: 22px;
+  font-weight: 400;
+}
+.f-col ul { list-style: none; }
+.f-col li { margin-bottom: 10px; }
+.f-col a {
+  font-family: var(--serif);
+  font-weight: 350;
+  font-size: 1.05rem;
+  letter-spacing: -0.012em;
+  color: var(--bg);
+  transition: color 0.2s ease;
+  font-variation-settings: "opsz" 144, "SOFT" 30;
+}
+.f-col a:hover { color: #E89B6E; }
+.f-col p, .f-col span {
+  font-family: var(--serif);
+  font-weight: 350;
+  font-size: 1.02rem;
+  color: var(--bg);
+  line-height: 1.5;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(239, 233, 220, 0.15);
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(239, 233, 220, 0.5);
+}
+.footer-bottom .live { color: #E89B6E; }
+
+@media (max-width: 900px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+}
+@media (max-width: 560px) {
+  .footer-grid { grid-template-columns: 1fr; }
+}
+
+/* ============ CUSTOM CURSOR ============ */
+.cursor {
+  position: fixed;
+  width: 8px; height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  mix-blend-mode: difference;
+  display: none;
+}
+@media (hover: hover) and (pointer: fine) {
+  .cursor { display: block; }
+}
+.cursor.expand { transform: translate(-50%, -50%) scale(3.4); opacity: 0.6; }
+
+/* ============ REVEAL ============ */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1); }
+.reveal.in { opacity: 1; transform: translateY(0); }
+
+/* Selection */
+::selection { background: var(--accent); color: var(--bg); }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--line); border: 2px solid var(--bg); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: var(--muted); }
+
+</style>
+</head>
+<body>
+
+<div class="cursor"></div>
+
+<!-- ============ NAV ============ -->
+<nav class="top">
+  <a href="#top" class="brand">
+    <span>ODQZ</span>
+    <span class="dot"></span>
+  </a>
+  <div class="nav-links">
+    <a href="#work">Work</a>
+    <a href="#services">Services</a>
+    <a href="#approach">Approach</a>
+    <a href="#studio">Studio</a>
+    <a href="#contact" class="pill">Start a project →</a>
+  </div>
+</nav>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-meta">
+        <div class="left">
+          <span class="pill-light">Currently booking — Q3 / Q4 2026 <span class="pulse"></span></span>
+          <span class="mono">Lahore — 31.5°N, 74.3°E</span>
+        </div>
+        <span class="mono">Est. 2024 — Issue No. 14</span>
+      </div>
+
+      <h1 class="headline reveal">
+        We make <em>considered</em> work for considered brands.
+      </h1>
+
+      <div class="hero-bottom">
+        <p class="reveal">
+          ODQZ is an independent brand and digital studio based in Lahore. We partner with founders, operators, and in-house teams to build identities, websites, and the systems that hold them together — quietly, slowly, and with care.
+        </p>
+        <div class="meta-grid reveal">
+          <div>
+            <div class="label">Discipline</div>
+            <div class="val">Brand · Digital · Growth</div>
+          </div>
+          <div>
+            <div class="label">Engagement</div>
+            <div class="val">Project &amp; Retainer</div>
+          </div>
+          <div>
+            <div class="label">Studio</div>
+            <div class="val">Six people, Lahore</div>
+          </div>
+          <div>
+            <div class="label">Working since</div>
+            <div class="val">February 2024</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MARQUEE ============ -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>
+        Brand identity <span class="star">✦</span>
+        Visual systems <span class="star">✦</span>
+        Websites <span class="star">✦</span>
+        E-commerce <span class="star">✦</span>
+        Naming &amp; verbal <span class="star">✦</span>
+        Editorial design <span class="star">✦</span>
+        Packaging <span class="star">✦</span>
+        Ongoing retainers <span class="star">✦</span>
+      </span>
+      <span>
+        Brand identity <span class="star">✦</span>
+        Visual systems <span class="star">✦</span>
+        Websites <span class="star">✦</span>
+        E-commerce <span class="star">✦</span>
+        Naming &amp; verbal <span class="star">✦</span>
+        Editorial design <span class="star">✦</span>
+        Packaging <span class="star">✦</span>
+        Ongoing retainers <span class="star">✦</span>
+      </span>
+    </div>
+  </div>
+
+  <!-- ============ WORK ============ -->
+  <section id="work">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="num">[ 01 ]  &mdash;  Selected Work</span>
+        <h2>A handful of <em>partnerships</em>, chosen with care.</h2>
+      </div>
+
+      <div class="work-list">
+        <a class="work-item" data-color="#C7724A">
+          <span class="idx">/01</span>
+          <span class="title">Saaya Living <span class="it">— Brand identity</span></span>
+          <span class="scope">Hospitality &amp; lifestyle retailer building a softer, slower kind of luxury.</span>
+          <span class="meta">2025 · Lahore</span>
+          <span class="arrow">↗</span>
+          <span class="swatch" style="background: linear-gradient(135deg, #C7724A 0%, #8B4525 100%);">
+            <svg viewBox="0 0 220 140" xmlns="http://www.w3.org/2000/svg">
+              <text x="20" y="60" font-family="Fraunces, serif" font-size="42" font-style="italic" fill="#F4E5D6" font-weight="300">Saaya</text>
+              <text x="20" y="92" font-family="JetBrains Mono, monospace" font-size="9" fill="#F4E5D6" letter-spacing="3">SLOW LIVING — EST. 2024</text>
+              <circle cx="180" cy="100" r="22" fill="none" stroke="#F4E5D6" stroke-width="1"/>
+              <circle cx="180" cy="100" r="10" fill="#F4E5D6"/>
+            </svg>
+          </span>
+        </a>
+
+        <a class="work-item" data-color="#3E5C42">
+          <span class="idx">/02</span>
+          <span class="title">Roohi &amp; Co. <span class="it">— Packaging + e-commerce</span></span>
+          <span class="scope">Specialty tea brand reaching new markets through a refreshed identity and storefront.</span>
+          <span class="meta">2025 · Karachi</span>
+          <span class="arrow">↗</span>
+          <span class="swatch" style="background: linear-gradient(135deg, #3E5C42 0%, #1F3525 100%);">
+            <svg viewBox="0 0 220 140" xmlns="http://www.w3.org/2000/svg">
+              <rect x="80" y="20" width="60" height="100" rx="2" fill="#E8D9A8"/>
+              <text x="110" y="75" font-family="Fraunces, serif" font-size="14" font-style="italic" fill="#3E5C42" text-anchor="middle">Roohi</text>
+              <line x1="92" y1="86" x2="128" y2="86" stroke="#3E5C42" stroke-width="0.5"/>
+              <text x="110" y="98" font-family="JetBrains Mono, monospace" font-size="5" fill="#3E5C42" text-anchor="middle" letter-spacing="2">KASHMIRI BLEND</text>
+            </svg>
+          </span>
+        </a>
+
+        <a class="work-item" data-color="#1F2937">
+          <span class="idx">/03</span>
+          <span class="title">Niyat Capital <span class="it">— Brand &amp; product UI</span></span>
+          <span class="scope">Investment platform helping South Asian professionals build long-term portfolios.</span>
+          <span class="meta">2025 · Islamabad</span>
+          <span class="arrow">↗</span>
+          <span class="swatch" style="background: linear-gradient(135deg, #2A3540 0%, #0F1620 100%);">
+            <svg viewBox="0 0 220 140" xmlns="http://www.w3.org/2000/svg">
+              <text x="20" y="50" font-family="Fraunces, serif" font-size="32" fill="#E5D5A8" font-weight="300">Niyat</text>
+              <line x1="20" y1="70" x2="200" y2="70" stroke="#E5D5A8" stroke-width="0.4" opacity="0.4"/>
+              <polyline points="20,108 50,90 80,98 110,72 140,82 170,60 200,68" fill="none" stroke="#E5D5A8" stroke-width="1.4"/>
+              <text x="20" y="128" font-family="JetBrains Mono, monospace" font-size="7" fill="#E5D5A8" letter-spacing="2" opacity="0.7">YTD +12.4%</text>
+            </svg>
+          </span>
+        </a>
+
+        <a class="work-item" data-color="#A24B26">
+          <span class="idx">/04</span>
+          <span class="title">Tabeer Foundation <span class="it">— Visual identity</span></span>
+          <span class="scope">Education non-profit serving underserved communities in southern Punjab.</span>
+          <span class="meta">2024 · Multan</span>
+          <span class="arrow">↗</span>
+          <span class="swatch" style="background: linear-gradient(135deg, #A24B26 0%, #5C2A0F 100%);">
+            <svg viewBox="0 0 220 140" xmlns="http://www.w3.org/2000/svg">
+              <text x="20" y="80" font-family="Fraunces, serif" font-size="44" font-style="italic" fill="#F2E0CC" font-weight="300">Tabeer.</text>
+              <text x="20" y="106" font-family="JetBrains Mono, monospace" font-size="8" fill="#F2E0CC" letter-spacing="3" opacity="0.8">A FOUNDATION FOR LEARNING</text>
+            </svg>
+          </span>
+        </a>
+
+        <a class="work-item" data-color="#4D3E5C">
+          <span class="idx">/05</span>
+          <span class="title">Daftar Spaces <span class="it">— Web platform &amp; content</span></span>
+          <span class="scope">Boutique workspace network across Lahore and Islamabad. Membership platform &amp; brand systems.</span>
+          <span class="meta">2024 · Lahore</span>
+          <span class="arrow">↗</span>
+          <span class="swatch" style="background: linear-gradient(135deg, #4D3E5C 0%, #281F32 100%);">
+            <svg viewBox="0 0 220 140" xmlns="http://www.w3.org/2000/svg">
+              <rect x="20" y="30" width="40" height="80" fill="none" stroke="#E8DFD0" stroke-width="0.6"/>
+              <rect x="65" y="50" width="40" height="60" fill="none" stroke="#E8DFD0" stroke-width="0.6"/>
+              <rect x="110" y="40" width="40" height="70" fill="none" stroke="#E8DFD0" stroke-width="0.6"/>
+              <rect x="155" y="55" width="40" height="55" fill="none" stroke="#E8DFD0" stroke-width="0.6"/>
+              <text x="110" y="125" font-family="Fraunces, serif" font-size="14" fill="#E8DFD0" font-style="italic" text-anchor="middle">daftar</text>
+            </svg>
+          </span>
+        </a>
+
+        <a class="work-item" data-color="#7A5C2E">
+          <span class="idx">/06</span>
+          <span class="title">Bagh Atelier <span class="it">— Ongoing retainer</span></span>
+          <span class="scope">Heritage textile house. Quarterly campaigns, e-commerce design, and content production.</span>
+          <span class="meta">Ongoing · Lahore</span>
+          <span class="arrow">↗</span>
+          <span class="swatch" style="background: linear-gradient(135deg, #7A5C2E 0%, #3E2E15 100%);">
+            <svg viewBox="0 0 220 140" xmlns="http://www.w3.org/2000/svg">
+              <path d="M 110 20 Q 140 50 110 70 Q 80 50 110 20 Z" fill="#E8D9A8" opacity="0.85"/>
+              <path d="M 110 70 Q 140 100 110 120 Q 80 100 110 70 Z" fill="#E8D9A8" opacity="0.85"/>
+              <text x="110" y="78" font-family="Fraunces, serif" font-size="11" font-style="italic" fill="#3E2E15" text-anchor="middle">Bagh</text>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICES ============ -->
+  <section id="services" class="services">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="num">[ 02 ]  &mdash;  Services</span>
+        <h2>Three areas, one <em>studio</em>.</h2>
+      </div>
+
+      <div class="services-grid">
+        <div class="svc">
+          <div class="label">A — Brand</div>
+          <h3>The <em>foundation</em>: who you are, before the world meets you.</h3>
+          <p>For founders launching something new and teams whose visual language has stopped keeping up with their ambition.</p>
+          <ul>
+            <li>Identity systems<span class="plus">+</span></li>
+            <li>Naming &amp; verbal<span class="plus">+</span></li>
+            <li>Brand strategy<span class="plus">+</span></li>
+            <li>Guidelines<span class="plus">+</span></li>
+            <li>Print &amp; packaging<span class="plus">+</span></li>
+          </ul>
+        </div>
+
+        <div class="svc">
+          <div class="label">B — Digital</div>
+          <h3>Websites and product surfaces, built to <em>last</em>.</h3>
+          <p>Marketing sites, e-commerce, and product UI. Designed and developed in-house, end to end. We don't hand off to a separate dev shop.</p>
+          <ul>
+            <li>Marketing websites<span class="plus">+</span></li>
+            <li>E-commerce (Shopify)<span class="plus">+</span></li>
+            <li>Product UI &amp; UX<span class="plus">+</span></li>
+            <li>Webflow / custom build<span class="plus">+</span></li>
+            <li>CMS integration<span class="plus">+</span></li>
+          </ul>
+        </div>
+
+        <div class="svc">
+          <div class="label">C — Growth retainers</div>
+          <h3>Ongoing <em>care</em> after the launch.</h3>
+          <p>Most of our work continues past launch. Monthly retainers cover content, performance creative, conversion improvements, and the unglamorous work of keeping things sharp.</p>
+          <ul>
+            <li>Content &amp; editorial<span class="plus">+</span></li>
+            <li>Performance creative<span class="plus">+</span></li>
+            <li>SEO &amp; on-page<span class="plus">+</span></li>
+            <li>CRO &amp; iteration<span class="plus">+</span></li>
+            <li>Quarterly reporting<span class="plus">+</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ APPROACH ============ -->
+  <section id="approach">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="num">[ 03 ]  &mdash;  Approach</span>
+        <h2>How we <em>work</em>.</h2>
+      </div>
+
+      <div class="approach-list">
+        <div class="approach-row reveal">
+          <div class="num">01</div>
+          <h4>Listening,<br/>before drawing.</h4>
+          <p>Every engagement opens with a structured discovery phase — usually two to three weeks of stakeholder conversations, audit work, and reading. We've never solved a brand problem we didn't first take the time to understand.</p>
+        </div>
+
+        <div class="approach-row reveal">
+          <div class="num">02</div>
+          <h4>Strategy<br/>as a written thing.</h4>
+          <p>We document. Positioning, audience, voice, visual direction — all of it written down before a single pixel moves. Strategy that lives only in someone's head doesn't survive the project.</p>
+        </div>
+
+        <div class="approach-row reveal">
+          <div class="num">03</div>
+          <h4>Craft, in<br/>a slow hand.</h4>
+          <p>We work in small teams of two to three on each engagement. No account managers, no telephone. The people designing the work are the people you talk to about it. That's not a feature — it's the only way we know how to be good.</p>
+        </div>
+
+        <div class="approach-row reveal">
+          <div class="num">04</div>
+          <h4>Care<br/>that continues.</h4>
+          <p>Most projects roll into a retainer. New brand systems need maintenance, websites need iteration, growth needs attention. We stay close to the brands we launch — that's where most of our time actually goes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STUDIO ============ -->
+  <section id="studio" class="studio">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="num">[ 04 ]  &mdash;  Studio</span>
+        <h2>A small <em>studio</em>, by design.</h2>
+      </div>
+
+      <div class="studio-body">
+        <div class="lead reveal">
+          We started ODQZ in 2024 because the work we wanted to do — <em>slow, considered, in-house from strategy through code</em> — wasn't happening at the agencies we'd worked at before.
+        </div>
+        <div class="body reveal">
+          <p>Today we're a team of six designers, developers, and writers based out of a quiet studio in Gulberg, Lahore. We work with a deliberately small client list — typically four to six concurrent engagements — split between project work and ongoing retainers.</p>
+          <p>Most of our clients come through referral. We turn down more work than we take. That isn't false modesty; it's how we keep the quality where we want it.</p>
+          <p>If you're a founder, an in-house brand lead, or an operator at a company that takes its work seriously, we'd like to hear from you.</p>
+        </div>
+      </div>
+
+      <div class="testimonials reveal">
+        <div class="t-card">
+          <span class="qmark">"</span>
+          <blockquote>They treated our brand the way we wished we could — calmly, slowly, with a level of taste that we just didn't have in-house. The new identity has held up across every surface we've put it on.</blockquote>
+          <cite>
+            <strong>Ayesha Karim</strong><br/>
+            Founder, Saaya Living
+          </cite>
+        </div>
+
+        <div class="t-card">
+          <span class="qmark">"</span>
+          <blockquote>What stood out was the writing. Every deliverable came with reasoning attached. Two years in, the system they built still answers most of our internal questions on its own.</blockquote>
+          <cite>
+            <strong>Hamza Yousaf</strong><br/>
+            Co-founder, Niyat Capital
+          </cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="num">[ 05 ]  &mdash;  Common Questions</span>
+        <h2>The things <em>most people</em> ask first.</h2>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q">
+            <span class="q-text">What does an engagement typically cost?</span>
+            <span class="toggle">+</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">
+              Brand identity engagements typically begin at PKR 350,000 and scale based on scope. Website projects begin at PKR 450,000. Ongoing retainers start at PKR 150,000 per month with a minimum six-month commitment. We send a detailed proposal after our first conversation — fixed fee, no hourly billing.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            <span class="q-text">How long does a project take?</span>
+            <span class="toggle">+</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">
+              A focused brand identity is usually six to eight weeks. A marketing website runs eight to twelve. E-commerce or product work typically takes longer — twelve to sixteen weeks depending on integrations. We don't rush, and we don't pad. Timelines are written into the contract.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            <span class="q-text">Do you work outside Pakistan?</span>
+            <span class="toggle">+</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">
+              Yes. Roughly a third of our work is for clients in the UAE, UK, and the US — mostly founder-led companies in retail, financial services, and consumer goods. We invoice in PKR, USD, GBP, or AED, and we accept JazzCash, Easypaisa, bank transfer, and international card payments through our payment partners.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            <span class="q-text">What does a retainer actually cover?</span>
+            <span class="toggle">+</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">
+              A monthly allotment of design, development, and content hours — typically 40 to 80 — applied to whatever you need that month. Most retainers cover ongoing site updates, content production, performance creative, A/B test design, and quarterly review meetings. We share a written brief at the start of each month.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            <span class="q-text">Who will I actually be working with?</span>
+            <span class="toggle">+</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">
+              The same two or three people for the entire engagement — usually a designer, a developer, and one of the founders. No account managers. No handoffs. The team that designs your work is the team that builds it and the team that responds to your emails.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            <span class="q-text">How do we start?</span>
+            <span class="toggle">+</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">
+              Send us a note through the form below. If we think we're the right studio for the work, we'll set up a 45-minute conversation. If we're not, we'll tell you and where possible we'll point you to a studio who is. Either way, we usually reply within two working days.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="num">[ 06 ]  &mdash;  Contact</span>
+        <h2 style="visibility:hidden; height:0; margin:0;">Contact</h2>
+      </div>
+
+      <div class="contact-head">
+        <h2 class="display reveal">Tell us about<br/>your <em>project</em>.</h2>
+        <p class="meta reveal">
+          We read every message. If we're the right studio for the work, we'll be in touch within two working days. If we're not, we'll usually point you to someone who is.<br/><br/>
+          Or write to us directly at <a href="mailto:hello@odqz.online">hello@odqz.online</a>.
+        </p>
+      </div>
+
+      <form class="cf reveal" id="contactForm" novalidate>
+        <div class="field left">
+          <label for="name">01 — Your name</label>
+          <input type="text" id="name" name="name" placeholder="Ayesha Karim" required />
+        </div>
+        <div class="field right">
+          <label for="company">02 — Company</label>
+          <input type="text" id="company" name="company" placeholder="Saaya Living" />
+        </div>
+        <div class="field left">
+          <label for="email">03 — Email</label>
+          <input type="email" id="email" name="email" placeholder="ayesha@example.com" required />
+        </div>
+        <div class="field right">
+          <label for="type">04 — Project type</label>
+          <select id="type" name="type" required>
+            <option value="" disabled selected>Choose one</option>
+            <option>Brand identity</option>
+            <option>Website / e-commerce</option>
+            <option>Ongoing retainer</option>
+            <option>Product UI / UX</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="field full">
+          <label for="msg">05 — Tell us about it</label>
+          <textarea id="msg" name="msg" rows="3" placeholder="A few sentences on the work, the timing, and what you're hoping to achieve." required></textarea>
+        </div>
+
+        <div class="submit-row">
+          <button type="submit" class="submit">
+            Send message <span class="arrow">→</span>
+          </button>
+          <span class="submit-note">By sending, you agree we may store your message to respond. We don't share it with anyone else.</span>
+        </div>
+
+        <div class="form-success" id="formSuccess">
+          <h3>Thank you — your note's with us.</h3>
+          <p>One of us will read it personally. Expect a reply from a real person at hello@odqz.online within two working days. In the meantime, have a kind afternoon.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="wordmark">odqz<span class="it">.</span></div>
+        <p>An independent brand &amp; digital studio. Working out of Lahore since 2024 with selected clients across Pakistan and the region.</p>
+      </div>
+
+      <div class="f-col">
+        <h5>Studio</h5>
+        <p>Studio 14, Block H<br/>Gulberg III, Lahore<br/>Punjab, Pakistan</p>
+      </div>
+
+      <div class="f-col">
+        <h5>Get in touch</h5>
+        <ul>
+          <li><a href="mailto:hello@odqz.online">hello@odqz.online</a></li>
+          <li><a href="mailto:new@odqz.online">new@odqz.online</a></li>
+          <li><a href="#contact">Contact form</a></li>
+        </ul>
+      </div>
+
+      <div class="f-col">
+        <h5>Sitemap</h5>
+        <ul>
+          <li><a href="#work">Selected work</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#approach">Approach</a></li>
+          <li><a href="#studio">Studio</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2024 — 2026 ODQZ Studio. All work shown remains property of respective clients.</span>
+      <span class="live">
+        <span id="liveTime">—</span> · Lahore
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ============ NAV SCROLL ============ */
+const nav = document.querySelector('nav.top');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 30);
+});
+
+/* ============ CUSTOM CURSOR ============ */
+const cursor = document.querySelector('.cursor');
+let cx = 0, cy = 0, tx = 0, ty = 0;
+window.addEventListener('mousemove', (e) => {
+  tx = e.clientX; ty = e.clientY;
+});
+function tick() {
+  cx += (tx - cx) * 0.18;
+  cy += (ty - cy) * 0.18;
+  cursor.style.left = cx + 'px';
+  cursor.style.top = cy + 'px';
+  requestAnimationFrame(tick);
+}
+tick();
+document.querySelectorAll('a, button, .work-item, .faq-q, input, textarea, select').forEach(el => {
+  el.addEventListener('mouseenter', () => cursor.classList.add('expand'));
+  el.addEventListener('mouseleave', () => cursor.classList.remove('expand'));
+});
+
+/* ============ REVEAL ============ */
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in');
+      io.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+/* ============ FAQ ============ */
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  });
+});
+
+/* ============ FORM ============ */
+const form = document.getElementById('contactForm');
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const required = form.querySelectorAll('[required]');
+  let valid = true;
+  required.forEach(f => {
+    if (!f.value.trim()) {
+      valid = false;
+      f.style.color = '#B5471F';
+      setTimeout(() => f.style.color = '', 2000);
+    }
+  });
+  if (!valid) return;
+
+  // Hide form fields, show success
+  form.querySelectorAll('.field, .submit-row').forEach(el => el.style.display = 'none');
+  document.getElementById('formSuccess').classList.add('show');
+  // Note: in production, replace with actual fetch() to your endpoint, Formspree, or Cloudflare Pages Function
+  // Example: fetch('/api/contact', { method: 'POST', body: new FormData(form) });
+});
+
+/* ============ LIVE TIME (LAHORE PKT) ============ */
+function updateTime() {
+  const now = new Date();
+  const opts = { hour: '2-digit', minute: '2-digit', hour12: false, timeZone: 'Asia/Karachi' };
+  const t = now.toLocaleTimeString('en-GB', opts);
+  document.getElementById('liveTime').textContent = t + ' PKT';
+}
+updateTime();
+setInterval(updateTime, 30000);
+</script>
+
+</body>
+</html>
