@@ -400,51 +400,130 @@ nav.top.scrolled {
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
+.services-intro {
+  font-family: var(--serif);
+  font-weight: 320;
+  font-size: clamp(1.15rem, 1.9vw, 1.55rem);
+  line-height: 1.45;
+  letter-spacing: -0.012em;
+  font-variation-settings: "opsz" 144, "SOFT" 40;
+  color: var(--ink-2);
+  max-width: 60ch;
+  margin-bottom: 60px;
+}
 .services-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0;
   border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
 }
-.svc {
-  padding: 50px 36px 50px 0;
+.svc-card {
+  padding: 38px 34px 34px 34px;
   border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
   position: relative;
+  background: transparent;
+  transition: background 0.4s ease;
 }
-.svc:last-child { border-right: none; padding-right: 0; }
-.svc:not(:first-child) { padding-left: 36px; }
-.svc .label { margin-bottom: 22px; }
-.svc h3 {
+.svc-card:hover { background: var(--bg); }
+.svc-num {
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  margin-bottom: 14px;
+  font-weight: 500;
+}
+.svc-tag {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 22px;
+  padding: 5px 11px;
+  border: 1px solid var(--line);
+  border-radius: 100px;
+  display: inline-block;
+  align-self: flex-start;
+  background: var(--bg);
+}
+.svc-card h3 {
   font-family: var(--serif);
   font-weight: 350;
-  font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+  font-size: clamp(1.35rem, 1.9vw, 1.7rem);
   letter-spacing: -0.02em;
-  line-height: 1.05;
-  margin-bottom: 18px;
-  font-variation-settings: "opsz" 144, "SOFT" 50;
+  line-height: 1.1;
+  margin-bottom: 14px;
+  font-variation-settings: "opsz" 144, "SOFT" 30;
+  color: var(--ink);
 }
-.svc h3 em { font-style: italic; color: var(--accent); }
-.svc p { color: var(--ink-2); margin-bottom: 28px; font-size: 0.98rem; }
-.svc ul { list-style: none; }
-.svc li {
-  font-family: var(--mono);
-  font-size: 0.78rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  padding: 11px 0;
-  border-top: 1px solid var(--line);
+.svc-card > p {
   color: var(--ink-2);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  margin-bottom: 22px;
+}
+.svc-includes {
+  list-style: none;
+  margin-bottom: 28px;
+  flex: 1;
+}
+.svc-includes li {
+  font-size: 0.88rem;
+  color: var(--ink-2);
+  padding: 5px 0;
+  padding-left: 22px;
+  position: relative;
+  line-height: 1.5;
+}
+.svc-includes li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1em;
+}
+.svc-foot {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+  gap: 12px;
 }
-.svc li:last-child { border-bottom: 1px solid var(--line); }
-.svc li::before { content: ''; }
-.svc li .plus { color: var(--accent); font-size: 0.9em; }
-@media (max-width: 900px) {
-  .services-grid { grid-template-columns: 1fr; }
-  .svc { border-right: none; border-bottom: 1px solid var(--line); padding: 40px 0 !important; }
-  .svc:last-child { border-bottom: none; }
+.svc-price {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 350;
+  font-size: clamp(1.2rem, 1.7vw, 1.5rem);
+  letter-spacing: -0.02em;
+  color: var(--accent);
+  font-variation-settings: "opsz" 144, "SOFT" 80;
+  white-space: nowrap;
+}
+.svc-cta {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 2px;
+  transition: color 0.25s ease, border-color 0.25s ease;
+  white-space: nowrap;
+}
+.svc-cta:hover { color: var(--accent); border-color: var(--accent); }
+@media (max-width: 1100px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 700px) {
+  .services-grid { grid-template-columns: 1fr; border-left: none; }
+  .svc-card { border-right: none; padding: 32px 0; }
 }
 
 /* ============ APPROACH ============ */
@@ -1248,48 +1327,166 @@ footer {
     <div class="wrap">
       <div class="sec-head reveal">
         <span class="num">[ 02 ]  &mdash;  Services</span>
-        <h2>Three areas, one <em>studio</em>.</h2>
+        <h2>Nine services, <em>one studio</em>.</h2>
       </div>
 
+      <p class="services-intro reveal">
+        From a single piece of design to ongoing monthly engagements. Each service below is offered at a fixed starting price in Pakistani Rupees. Final scope is confirmed in a written proposal after our discovery call.
+      </p>
+
       <div class="services-grid">
-        <div class="svc">
-          <div class="label">A — Brand</div>
-          <h3>The <em>foundation</em>: who you are, before the world meets you.</h3>
-          <p>For founders launching something new and teams whose visual language has stopped keeping up with their ambition.</p>
-          <ul>
-            <li>Identity systems<span class="plus">+</span></li>
-            <li>Naming &amp; verbal<span class="plus">+</span></li>
-            <li>Brand strategy<span class="plus">+</span></li>
-            <li>Guidelines<span class="plus">+</span></li>
-            <li>Print &amp; packaging<span class="plus">+</span></li>
+        <article class="svc-card reveal">
+          <div class="svc-num">/ 01</div>
+          <span class="svc-tag">Design — Project</span>
+          <h3>Logo &amp; Wordmark Design</h3>
+          <p>A single, considered mark for your brand. Three concept directions, two revision rounds, and master files in every format you'll ever need.</p>
+          <ul class="svc-includes">
+            <li>Up to three concept directions</li>
+            <li>Two revision rounds</li>
+            <li>Master files (AI, SVG, PNG, PDF)</li>
+            <li>One-page usage guide</li>
           </ul>
-        </div>
+          <div class="svc-foot">
+            <span class="svc-price">PKR 35,000</span>
+            <a href="#contact" class="svc-cta">Request →</a>
+          </div>
+        </article>
 
-        <div class="svc">
-          <div class="label">B — Digital</div>
-          <h3>Websites and product surfaces, built to <em>last</em>.</h3>
-          <p>Marketing sites, e-commerce, and product UI. Designed and developed in-house, end to end. We don't hand off to a separate dev shop.</p>
-          <ul>
-            <li>Marketing websites<span class="plus">+</span></li>
-            <li>E-commerce (Shopify)<span class="plus">+</span></li>
-            <li>Product UI &amp; UX<span class="plus">+</span></li>
-            <li>Webflow / custom build<span class="plus">+</span></li>
-            <li>CMS integration<span class="plus">+</span></li>
+        <article class="svc-card reveal">
+          <div class="svc-num">/ 02</div>
+          <span class="svc-tag">Design — Project</span>
+          <h3>Brand Identity System</h3>
+          <p>For startups and small teams launching with intent. Logo, palette, typography pairing, and a written guideline document for the whole team to use.</p>
+          <ul class="svc-includes">
+            <li>Full logo system with variations</li>
+            <li>Primary colour palette</li>
+            <li>Typography pairings</li>
+            <li>12-page brand guidelines PDF</li>
           </ul>
-        </div>
+          <div class="svc-foot">
+            <span class="svc-price">PKR 150,000</span>
+            <a href="#contact" class="svc-cta">Request →</a>
+          </div>
+        </article>
 
-        <div class="svc">
-          <div class="label">C — Growth retainers</div>
-          <h3>Ongoing <em>care</em> after the launch.</h3>
-          <p>Most of our work continues past launch. Monthly retainers cover content, performance creative, conversion improvements, and the unglamorous work of keeping things sharp.</p>
-          <ul>
-            <li>Content &amp; editorial<span class="plus">+</span></li>
-            <li>Performance creative<span class="plus">+</span></li>
-            <li>SEO &amp; on-page<span class="plus">+</span></li>
-            <li>CRO &amp; iteration<span class="plus">+</span></li>
-            <li>Quarterly reporting<span class="plus">+</span></li>
+        <article class="svc-card reveal">
+          <div class="svc-num">/ 03</div>
+          <span class="svc-tag">Design — Project</span>
+          <h3>Complete Brand Identity</h3>
+          <p>A full visual identity for serious brands. Strategy, voice, comprehensive system, and applications across every digital and print surface you need.</p>
+          <ul class="svc-includes">
+            <li>Brand strategy and positioning</li>
+            <li>Complete visual identity system</li>
+            <li>Verbal voice and tone guide</li>
+            <li>Applications: web, social, print</li>
           </ul>
-        </div>
+          <div class="svc-foot">
+            <span class="svc-price">PKR 350,000</span>
+            <a href="#contact" class="svc-cta">Request →</a>
+          </div>
+        </article>
+
+        <article class="svc-card reveal">
+          <div class="svc-num">/ 04</div>
+          <span class="svc-tag">Web — Project</span>
+          <h3>Landing Page Design</h3>
+          <p>A single, focused page that turns visitors into customers. Copywriting included, mobile-first responsive build, ready to deploy on your hosting.</p>
+          <ul class="svc-includes">
+            <li>One-page custom design</li>
+            <li>Copywriting included</li>
+            <li>Mobile-first responsive build</li>
+            <li>Deployment to your hosting</li>
+          </ul>
+          <div class="svc-foot">
+            <span class="svc-price">PKR 85,000</span>
+            <a href="#contact" class="svc-cta">Request →</a>
+          </div>
+        </article>
+
+        <article class="svc-card reveal">
+          <div class="svc-num">/ 05</div>
+          <span class="svc-tag">Web — Project</span>
+          <h3>Marketing Website Build</h3>
+          <p>A complete marketing site for established businesses. Five to seven pages, content management system, on-page SEO setup, and analytics in place from day one.</p>
+          <ul class="svc-includes">
+            <li>Five to seven custom pages</li>
+            <li>CMS for self-management</li>
+            <li>On-page SEO setup</li>
+            <li>Analytics + tag manager</li>
+          </ul>
+          <div class="svc-foot">
+            <span class="svc-price">PKR 250,000</span>
+            <a href="#contact" class="svc-cta">Request →</a>
+          </div>
+        </article>
+
+        <article class="svc-card reveal">
+          <div class="svc-num">/ 06</div>
+          <span class="svc-tag">Web — Project</span>
+          <h3>E-commerce Store Build</h3>
+          <p>A Shopify storefront ready to start selling. Up to fifty products imported, payment integration, inventory setup, and team training included.</p>
+          <ul class="svc-includes">
+            <li>Custom Shopify build</li>
+            <li>Up to 50 products imported</li>
+            <li>Payment gateway integration</li>
+            <li>Two-hour team training session</li>
+          </ul>
+          <div class="svc-foot">
+            <span class="svc-price">PKR 450,000</span>
+            <a href="#contact" class="svc-cta">Request →</a>
+          </div>
+        </article>
+
+        <article class="svc-card reveal">
+          <div class="svc-num">/ 07</div>
+          <span class="svc-tag">Marketing — Monthly</span>
+          <h3>SEO Retainer</h3>
+          <p>Search visibility, slowly built. Technical audits, on-page optimization, content briefs, and a detailed monthly performance report. Six-month minimum.</p>
+          <ul class="svc-includes">
+            <li>Quarterly technical SEO audits</li>
+            <li>Monthly on-page optimization</li>
+            <li>Four content briefs per month</li>
+            <li>Detailed monthly report</li>
+          </ul>
+          <div class="svc-foot">
+            <span class="svc-price">PKR 95,000 / mo</span>
+            <a href="#contact" class="svc-cta">Request →</a>
+          </div>
+        </article>
+
+        <article class="svc-card reveal">
+          <div class="svc-num">/ 08</div>
+          <span class="svc-tag">Marketing — Monthly</span>
+          <h3>Content &amp; Social Retainer</h3>
+          <p>Consistent content for brands that want to show up. A monthly calendar, designed posts, captions, and scheduling — all handled. Six-month minimum.</p>
+          <ul class="svc-includes">
+            <li>Sixteen posts per month</li>
+            <li>Designed graphics or photo treatment</li>
+            <li>Caption and copy writing</li>
+            <li>Scheduling and posting</li>
+          </ul>
+          <div class="svc-foot">
+            <span class="svc-price">PKR 75,000 / mo</span>
+            <a href="#contact" class="svc-cta">Request →</a>
+          </div>
+        </article>
+
+        <article class="svc-card reveal">
+          <div class="svc-num">/ 09</div>
+          <span class="svc-tag">Strategy — One-time</span>
+          <h3>Brand Audit &amp; Consultation</h3>
+          <p>A written audit of your existing brand, with concrete recommendations. For teams sensing it's time for a refresh but unsure exactly what needs to change.</p>
+          <ul class="svc-includes">
+            <li>Ninety-minute discovery call</li>
+            <li>Written audit document</li>
+            <li>Specific, actionable recommendations</li>
+            <li>Sixty-minute review meeting</li>
+          </ul>
+          <div class="svc-foot">
+            <span class="svc-price">PKR 35,000</span>
+            <a href="#contact" class="svc-cta">Request →</a>
+          </div>
+        </article>
       </div>
     </div>
   </section>
